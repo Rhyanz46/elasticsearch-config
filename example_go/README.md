@@ -29,7 +29,7 @@ docker build -f Dockerfile.go -t cdnn-go .
 docker run --rm -d --name cdnn-go-test \
   --network elastic \
   -p 8081:8080 \
-  -e ELASTIC_APM_SECRET_TOKEN=Sk90WUI1c0JWLWZPczMxdWpMMjY6WkNiUlNRYUVkVDFLR2JBeHA1d0F6QQ== \
+  -e ELASTIC_APM_SECRET_TOKEN=$APM_SECRET_TOKEN \
   -e ELASTIC_APM_SERVER_URL=http://apm-server:8200 \
   cdnn-go
 ```

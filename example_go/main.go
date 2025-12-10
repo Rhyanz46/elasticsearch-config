@@ -25,8 +25,7 @@ func NewCDNNService() *CDNNService {
 		log.Fatalf("Failed to create APM tracer: %v", err)
 	}
 
-	// Set secret token for authentication
-	os.Setenv("ELASTIC_APM_SECRET_TOKEN", "Sk90WUI1c0JWLWZPczMxdWpMMjY6WkNiUlNRYUVkVDFLR2JBeHA1d0F6QQ==")
+	// Note: Secret token should be configured via environment variables
 
 	return &CDNNService{
 		apm: tracer,
