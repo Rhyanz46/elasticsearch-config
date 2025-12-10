@@ -172,7 +172,37 @@ services:
      es01:
        condition: service_healthy
 
- 
+ # Python APM Application
+ python-cdnn:
+   build:
+     context: ./python
+     dockerfile: Dockerfile
+   environment:
+     - ELASTIC_APM_SERVICE_NAME=cdnn
+     - ELASTIC_APM_SECRET_TOKEN=${APM_SECRET_TOKEN}
+     - ELASTIC_APM_SERVER_URL=http://apm-server:8200
+     - ELASTIC_APM_ENVIRONMENT=development
+   depends_on:
+     apm-server:
+       condition: service_started
+   restart: unless-stopped
+
+ # Go APM Application
+ go-cdnn:
+   build:
+     context: ./go
+     dockerfile: Dockerfile.go
+   ports:
+     - "8081:8080"
+   environment:
+     - ELASTIC_APM_SECRET_TOKEN=${APM_SECRET_TOKEN}
+     - ELASTIC_APM_SERVER_URL=http://apm-server:8200
+   depends_on:
+     apm-server:
+       condition: service_started
+   restart: unless-stopped
+
+
 #  metricbeat01:
 #    depends_on:
 #      es01:
