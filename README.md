@@ -6,13 +6,13 @@ Complete Elastic Stack setup with Application Performance Monitoring (APM) for P
 
 ```
 elastic/
-├── 📁 python/                 # Python APM applications
+├── 📁 example_python/          # Python APM applications (examples)
 │   ├── simple_cdnn_test.py    # CDNN simulation with slow functions
 │   ├── test_apm.py           # Basic APM testing
 │   ├── simulate_cdnn.py      # Additional simulation
 │   ├── Dockerfile            # Python Docker configuration
 │   └── README.md             # Python documentation
-├── 📁 go/                     # Go APM applications
+├── 📁 example_go/             # Go APM applications (examples)
 │   ├── simple_go.go          # CDNN HTTP service with APM
 │   ├── main.go               # Alternative Go entrypoint
 │   ├── go.mod                # Go module definition
@@ -74,7 +74,7 @@ This project uses a **minimal and clean** configuration with only essential serv
 
 - **License**: Basic (upgrade to trial if needed)
 - **SSL/TLS**: Enabled for all services
-- **Secret Token**: `Sk90WUI1c0JWLWZPczMxdWpMMjY6WkNiUlNRYUVkVDFLR2JBeHA1d0F6QQ==`
+- **Secret Token**: Set in `.env` file (secure configuration)
 - **Network**: Custom Docker network `elastic`
 
 ## 📊 APM Features
@@ -160,8 +160,8 @@ for i in {1..5}; do curl http://localhost:8081/ & done; wait
 - **`README.md`** - This comprehensive documentation
 
 ### Application Code
-- **`python/`** - Complete Python APM simulation (3 scripts + Docker)
-- **`go/`** - Complete Go APM application (2 binaries + modules + Docker)
+- **`example_python/`** - Complete Python APM simulation examples (3 scripts + Docker)
+- **`example_go/`** - Complete Go APM application examples (2 binaries + modules + Docker)
 
 ### Utility Scripts
 - **`restart.sh`** - Quick service restart
@@ -177,10 +177,12 @@ for i in {1..5}; do curl http://localhost:8081/ & done; wait
 
 ## 🔒 Security Notes
 
-- ⚠️ **Never commit `.env`** file with real passwords
-- 🔑 Use `.env.example` as template only
-- 🛡️ All services use SSL/TLS by default
-- 🚫 Default passwords should be changed in production
+- ⚠️ **Never commit `.env`** file with real passwords or tokens
+- 🔑 Use `.env.example` as template only - configure your own secure values
+- 🛡️ All services use SSL/TLS by default with auto-generated certificates
+- 🚫 Change default passwords before deploying to production
+- 🔐 **Secret tokens** are configured via environment variables only
+- 📝 Never hard-code credentials in application code or documentation
 
 ## 📝 Environment Variables
 
@@ -213,7 +215,7 @@ Key variables in `.env`:
    docker compose logs python-cdnn
    docker compose logs go-cdnn
    ```
-   - ✅ Verify secret token: `Sk90WUI1c0JWLWZPczMxdWpMMjY6WkNiUlNRYUVkVDFLR2JBeHA1d0F6QQ==`
+   - ✅ Verify secret token matches between applications and APM server
    - ✅ Check network connectivity between services
    - ✅ Wait 2-3 minutes for data to appear in Kibana
 
@@ -289,7 +291,7 @@ The included APM simulations provide realistic performance scenarios:
 **Default Credentials:**
 - **Elasticsearch**: `elastic` (password from `.env`)
 - **Kibana**: `kibana_system` (password from `.env`)
-- **APM Token**: `Sk90WUI1c0JWLWZPczMxdWpMMjY6WkNiUlNRYUVkVDFLR2JBeHA1d0F6QQ==`
+- **APM Token**: Configured in `.env` file (secure)
 
 ---
 

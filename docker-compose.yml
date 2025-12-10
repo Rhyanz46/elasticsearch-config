@@ -169,7 +169,7 @@ services:
  # Python APM Application
  python-cdnn:
    build:
-     context: ./python
+     context: ./example_python
      dockerfile: Dockerfile
    environment:
      - ELASTIC_APM_SERVICE_NAME=cdnn
@@ -184,7 +184,7 @@ services:
  # Go APM Application
  go-cdnn:
    build:
-     context: ./go
+     context: ./example_go
      dockerfile: Dockerfile.go
    ports:
      - "8081:8080"

@@ -11,7 +11,7 @@ This folder contains Python applications for APM (Application Performance Monito
 ## Configuration
 
 - **Service Name**: `cdnn`
-- **Secret Token**: `Sk90WUI1c0JWLWZPczMxdWpMMjY6WkNiUlNRYUVkVDFLR2JBeHA1d0F6QQ==`
+- **Secret Token**: Configured via environment variable
 - **APM Server**: `http://apm-server:8200`
 
 ## Running

@@ -13,7 +13,7 @@ This folder contains a Go application with APM (Application Performance Monitori
 
 - **Service Name**: `cdnn-go`
 - **Environment**: `development`
-- **Secret Token**: `Sk90WUI1c0JWLWZPczMxdWpMMjY6WkNiUlNRYUVkVDFLR2JBeHA1d0F6QQ==`
+- **Secret Token**: Configured via environment variable
 - **APM Server**: `http://apm-server:8200`
 - **HTTP Port**: 8080
 

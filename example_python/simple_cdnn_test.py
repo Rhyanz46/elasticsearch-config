@@ -2,14 +2,15 @@
 
 import time
 import random
+import os
 from elasticapm import Client
 
 # Setup APM Client
 apm = Client({
-    'SERVICE_NAME': 'cdnn',
-    'SERVER_URL': 'http://172.18.0.2:8200',
-    'SECRET_TOKEN': 'Sk90WUI1c0JWLWZPczMxdWpMMjY6WkNiUlNRYUVkVDFLR2JBeHA1d0F6QQ==',
-    'ENVIRONMENT': 'development',
+    'SERVICE_NAME': os.getenv('ELASTIC_APM_SERVICE_NAME', 'cdnn'),
+    'SERVER_URL': os.getenv('ELASTIC_APM_SERVER_URL', 'http://apm-server:8200'),
+    'SECRET_TOKEN': os.getenv('ELASTIC_APM_SECRET_TOKEN'),
+    'ENVIRONMENT': os.getenv('ELASTIC_APM_ENVIRONMENT', 'development'),
     'DEBUG': True
 })
 
