@@ -30,13 +30,13 @@ elastic/
 ## 🏗️ Services
 
 ### Core Elastic Stack
-- **Elasticsearch**: Data storage and search engine
-- **Kibana**: Data visualization and dashboard
-- **APM Server**: Application performance monitoring backend
+- **Elasticsearch**: Data storage and search engine (port 9200)
+- **Kibana**: Data visualization and dashboard (port 5601)
+- **APM Server**: Application performance monitoring backend (port 8200)
 
 ### APM Applications
-- **Python CDNN Service** (`cdnn`): Simulated ML pipeline with slow operations
-- **Go CDNN Service** (`cdnn-go`): HTTP API with concurrent processing
+- **Python CDNN Service** (`python-cdnn`): Simulated ML pipeline with slow operations
+- **Go CDNN Service** (`go-cdnn`): HTTP API with concurrent processing (port 8081)
 
 ## ⚙️ Quick Start
 
