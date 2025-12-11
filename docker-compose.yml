@@ -162,6 +162,7 @@ services:
       - ELASTICSEARCH_HOSTS=https://es01:9200
       - ELASTICSEARCH_USERNAME=elastic
       - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
+      - APM_SECRET_TOKEN=${APM_SECRET_TOKEN}
     depends_on:
      es01:
        condition: service_healthy

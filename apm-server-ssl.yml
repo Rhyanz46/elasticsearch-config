@@ -1,5 +1,6 @@
 apm-server:
   host: "0.0.0.0:8200"
+  secret_token: "apm_secure_token_20251211_a7b8c9d0e1f2g3h4"
   ssl:
     enabled: false
     # certificate: "/usr/share/apm-server/certs/apm-server/apm-server.crt"
